@@ -4,9 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   },
+    { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
@@ -14,7 +15,10 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  /*{ path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' }*/
 ];
 
 @NgModule({
